@@ -8,10 +8,10 @@ export default function Main() {
     })
     
     function handleChange(event) {
-        const {value} = event.currentTarget
+        const {name, value} = event.currentTarget
         setMeme(prevMeme => ({
             ...prevMeme,
-            topText: value
+            [name]: value
         }))
     } 
 
@@ -23,6 +23,7 @@ export default function Main() {
                         type="text"
                         placeholder="One does not simply"
                         name="topText"
+                        value={meme.topText}
                         onChange={handleChange}
                     />
                 </label>
@@ -32,6 +33,8 @@ export default function Main() {
                         type="text"
                         placeholder="Walk into Mordor"
                         name="bottomText"
+                        value={meme.bottomText}
+                        onChange={handleChange}
                     />
                 </label>
                 <button>Get a new meme image 🖼</button>
