@@ -54,7 +54,7 @@ export default function Main() {
                         onChange={handleChange}
                     />
                 </label>
-                <button onClick={() => setMeme(getRandomMeme())}>Get a new meme image 🖼</button>
+                <button onClick={getRandomMeme}>Get a new meme image 🖼</button>
             </div>
             <div className="meme">
                 <img src={meme.imageUrl} />
